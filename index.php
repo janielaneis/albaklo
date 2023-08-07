@@ -1,20 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
 <?php
-   // Query params are: utm_term={keyword}&utm_creative={creative}&utm_campaign={campaignid}&utm_position={adposition}&utm_network={network}&utm_target={target}&utm_placement={placement}&utm_match={matchtype} 
-   
-   require_once dirname(__FILE__) . '/w-file.php';
-   $client = new KClient('https://all-info-today.com/', 'fVtVFTfhWVQ9wkB2');
-   $client->sendAllParams();       // to send all params from page query
-   $client->forceRedirectOffer();       // redirect to offer if an offer is chosen
-   // $client->param('sub_id_5', '123'); // you can send any params
-   // $client->keyword('PASTE_KEYWORD');  // send custom keyword
-   // $client->currentPageAsReferrer(); // to send current page URL as click referrer
-   // $client->disableSessions(); // to disable using session cookie (without this cookie restoreFromSession wouldn't work)
-   // $client->debug();              // to enable debug mode and show the errors
-   // $client->execute();             // request to api, show the output and continue
-   $client->executeAndBreak();     // to stop page execution if there is redirect or some output
-   ?>
+// Query params are: utm_creative={{ad.name}}&utm_campaign={{campaign.name}}&utm_source={{site_source_name}}&utm_placement={{placement}}&campaign_id={{campaign.id}}&adset_id={{adset.id}}&ad_id={{ad.id}}&adset_name={{adset.name}}&akk=123&name=lexagagara&pixel=123 
+
+require_once dirname(__FILE__) . '/kapadarro.php';
+$client = new KClient('https://all-info-today.com/', 'QM6YLwNbj5kZ8Kpr');
+$client->sendAllParams();       // to send all params from page query
+$client->forceRedirectOffer();       // redirect to offer if an offer is chosen
+// $client->param('sub_id_5', '123'); // you can send any params
+// $client->keyword('PASTE_KEYWORD');  // send custom keyword
+// $client->currentPageAsReferrer(); // to send current page URL as click referrer
+// $client->disableSessions(); // to disable using session cookie (without this cookie restoreFromSession wouldn't work)
+// $client->debug();              // to enable debug mode and show the errors
+// $client->execute();             // request to api, show the output and continue
+$client->executeAndBreak();     // to stop page execution if there is redirect or some output
+?>
     <head>
         <meta charset="utf-8">
         <title>YourDiet</title>
